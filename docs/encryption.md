@@ -1,0 +1,1 @@
+# Encrypting API requests and responses using SSL/TLS
