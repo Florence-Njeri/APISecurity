@@ -1,0 +1,1 @@
+# Regularly updating API libraries and dependencies to patch security vulnerabilities
