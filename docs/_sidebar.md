@@ -1,4 +1,3 @@
-* [Overview](README.md)
 * [Introduction to API Security](introduction.md)
 * [Common API Security Threats](security-threats.md)
 * [Mitigating Threats](mitigating-threats.md)
