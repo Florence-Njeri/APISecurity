@@ -9,6 +9,7 @@ One common method of authentication-based attacks is *social engineering* or *ph
 After a user is authenticated, most applications retain session data for subsequent requests, which includes information such as the user's access rights. Attackers can potentially exploit this session data if it is not adequately secured, allowing them to gain access to sensitive information or perform unauthorized actions.
 
 CIA Triad affected: **Confidentiality**, **Integrity**
+Attack methods: **Social engineering**, **phishing**
 
 ## Authorization errors
 
@@ -45,3 +46,5 @@ CIA Triad affected: **Confidentiality**, **Integrity**
 A website An XSS attack is one where the attacker injects browser-side scripts into a trusted website's webpages. An authenticated user to a system may receive a link to the website with some script embedded into it. If the app doesn't do proper data sanitization, the attackers script gets executed on the users browser. The attacker is then able to steal the data e.g cookie, PII etc they want to meet their objectives.
 
 CIA Triad affected: **Integrity**, **Confidentiality**
+
+In the next section, you'll learn how to mitigate these threats.

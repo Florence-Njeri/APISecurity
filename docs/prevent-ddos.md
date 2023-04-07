@@ -1,1 +1,1 @@
-# Implementing rate limiting to prevent brute-force attacks and DDoS attacks
+# Implementing rate limiting to prevent DDoS attacks

@@ -10,3 +10,4 @@
   * [Implementing API versioning to ensure backward compatibility and security](api-versioning.md)
   * [Implementing access controls and permissions to restrict access to sensitive API endpoints](ac-permissions.md)
   * [Implementing rate limiting to prevent brute-force attacks and DDoS attacks](prevent-ddos.md)
+* [API security best practices](best-practices.md)

@@ -17,7 +17,9 @@ Implementing RBA which restricts user access to only the data and functionality 
 
 Encryptions protects the data in storage and transit to and from the DB via the API. This ensures integrity of the data in storage as well as the data in transit. Encryption provides confidentiality. Type of encryption to use - assymetric/symetric
 
-## Hashing (Confidentiality and Integrity)
+## Hashing 
+
+Ensures Confidentiality and Integrity are mainatined.
 
 ## Rate limiting
 
