@@ -2,9 +2,9 @@
 
 ## Authentication-based attacks
 
-One of the primary ways that APIs maintain security is through authentication, which ensures that only authorized users can access data and functionality. However, attackers may attempt to compromise authentication measures to gain access to sensitive information.
+One of the primary ways that APIs maintain security is through authentication, which ensures that only authorized users can access an app's data and functionality. However, attackers may attempt to compromise authentication measures to gain access to sensitive information.
 
-One common method of authentication-based attacks is social engineering or phishing, where attackers trick users into disclosing their authentication credentials. Attackers may also try to intercept the authentication token that is returned when a user logs in, especially if the token contains excessive data.
+One common method of authentication-based attacks is *social engineering* or *phishing*, where attackers trick users into disclosing their authentication credentials. Attackers may also try to intercept the authentication token that is returned when a user logs in and if the token isn't encrypted, the attacker may be able to access the user's data.
 
 After a user is authenticated, most applications retain session data for subsequent requests, which includes information such as the user's access rights. Attackers can potentially exploit this session data if it is not adequately secured, allowing them to gain access to sensitive information or perform unauthorized actions.
 
@@ -12,7 +12,7 @@ CIA Triad affected: **Confidentiality**, **Integrity**
 
 ## Authorization errors
 
-Authorization is a critical aspect of API security, as it determines the level of access that users have to data and functionality. Improper handling of authorization errors can lead to sensitive information disclosure, as error messages may inadvertently reveal implementation details of the application that attackers can exploit. For instance, consider a "wrong password" error message. If an attacker is attempting to breach an application and receives this error message, they can infer that the associated email address exists in the system, which can help them in their attack. Therefore, it is crucial to carefully craft authorization error messages to avoid revealing sensitive information to potential attackers.
+Authorization is a critical aspect of API security, as it determines the level of access that users have to data and functionality. Improper handling of authorization errors can lead to sensitive information disclosure, as error messages may inadvertently reveal implementation details of the application that attackers can exploit. For instance, consider a "icorrect password" error message in a login form. If an attacker is attempting to breach an application and receives this error message, they can infer that the associated email address exists in the system, which can help them in their attack. Therefore, it is crucial to carefully craft authorization error messages to avoid revealing sensitive information to potential attackers.
 
 CIA Triad affected: **Integrity**
 
@@ -22,17 +22,11 @@ A DDos attack happens when attackers attempt to overwhelm an API with a flood of
 
 One common method of DDoS attacks against APIs is through brute force attacks, where attackers use automation to repeatedly try to log in to an API with various username and password combinations. This flood of login attempts can cause the API to become overwhelmed and unresponsive.
 
-To prevent DDoS attacks, APIs can implement measures such as *rate limiting*, which restricts the number of API requests that can be made within a certain time frame. Additionally, APIs can use tools such as firewalls and Intrusion Detection Systems(IDS) to monitor traffic and detect and block suspicious activity. By prioritizing DDoS protection, organizations can ensure the availability of their APIs and maintain the security and integrity of their data.
-
 CIA Triad affected: **Availability**
 
 ## SQL injection attacks
 
-An SQL injection is atype of attack that is targeted towards applications that use SQL commands to manipulate their databases. SQL injections mostly use known SQL vulnerabilities happens when forms and API requests don't validate user input to reject code as input. If the app doesn't validate user input before the data is added to its database, the SQL queries may be manipulated by the code the attacker puts in to manipulate the users database e.g to add a backdoor to the app or even delete or manipulate records in the DB.
-
-The API requiests are basically querying the database and without proper request valiodation in place, an attacker can manipulate the DB.
-
-To prevent these attacks, APIs can implement measures such as input validation and parameterized queries, which ensure that user input is properly sanitized and validated before it is used in SQL queries.
+An SQL injection is atype of attack that is targeted towards applications that use SQL commands to manipulate their databases. SQL injections use known SQL vulnerabilities to compromise systems. SQL injections happens when forms and API requests don't validate user input to reject code as input. If the app doesn't validate user input before the data is added to its database, the SQL queries may be manipulated by the code the attacker puts in to manipulate the users database e.g to add a backdoor to the app or even delete or manipulate records in the DB.
 
 CIA Triad affected: **Confidentiality**, **Integrity**
 
