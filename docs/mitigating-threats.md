@@ -1,6 +1,6 @@
 # Mitigating API Security Threats
 
-## Authentication
+## Authentication and session management
 
 Only authorized people can access an API.
 -Use tokens and API keys
@@ -11,9 +11,9 @@ Ensures people only get access to the data they are authorized to access. No ove
 
 ## Encryption and signatures
 
-Encryptions protects the data in transit to and from the DB via the API. This ensures integrity of the data in the transit.
+Encryptions protects the data in storage and transit to and from the DB via the API. This ensures integrity of the data in storage as well as the data in transit. Encryption provides confidentiality. Type of encryption to use - assymetric/symetric
 
-## Hashing
+## Hashing (Confidentiality and Integrity)
 
 ## Rate limiting
 
@@ -24,3 +24,7 @@ Limiting the number of requests that can be made to an API over a period of time
 Most web and mobile applications have some form of form that the user can fill to create or update data in the apps database. Input validation ensures that the data input by the user is safe and an attacker can't add a piece of SQL code that would alter your database. This prevents SQL attacks.
 
 ## Add an API gateway
+
+## The principle of priviledges
+
+Grant access on a need to know basis

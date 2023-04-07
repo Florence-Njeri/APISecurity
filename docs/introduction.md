@@ -8,7 +8,6 @@ API security on the other hand is the process and the measures put in place to p
 
 ### Authentication-based attacks
 
-Authentication and session management
 Most APIs require the users to get authenticated before they can sytart making requests. However, there are several ways an attacker could compromise this e.g by social engineering or phishing to obtain the users authentication credentials or even intercepting the token returned when the user logs in. If the API has excessive data returned in the token, then the attacker will be able to access users data.
 
 After a user is authenticated, most application retain some data refred to as session data for subsequent requests authentication which containst information such as a users access rights.
@@ -29,20 +28,16 @@ Example:
 
 ### SQL injection attacks
 
-An SQL injection mostly happens when forms and API requests don't validate user input to reject code as input. If the app doesn't validate user input before the data is added to its database, the SQL queries may be manipulated by the code the attacker puts in to manipulate the users database e.g to add a backdoor to the app or even delete or manipulate records in the db.
+An SQL injection is atype of attack that is targeted towards applications that use SQL commands to manipulate their databases. SQL injections mostly use known SQL vulnerabilities happens when forms and API requests don't validate user input to reject code as input. If the app doesn't validate user input before the data is added to its database, the SQL queries may be manipulated by the code the attacker puts in to manipulate the users database e.g to add a backdoor to the app or even delete or manipulate records in the DB.
 
-The APIs are basically querying the database.
-
-Example: https://blog.shiftleft.io/api-security-101-injection-a7feea1d4fd
+The API requiests are basically querying the database and without proper request valiodation in place, an attacker can manipulate the DB.
 
 ### Insecure direct object refences (IDOR)
 
-IDOR is an API vulnerability from the lack of access rights in an applications. Using IDOR, an attacker can manipulate the direct object reference such as a URL query parameter, database key, session id etc and get acess to data or information they shouldn't be able to access. For example, if your bank includes your user id in the URL you use to access your banking information, an attacker can try and change the id to another users id and if the applications hasn't enforced authorization checks, the attacker will be able to get access to other users banking details. Even worse is if they are able to use an automation tool to loop through all the users in the application and access their data. In this scenario, the user id is the direct object reference.
-
-Using IDOR an attacker can access data they aren't authorized to access. This is one case of excessive data exposure in applications.
-
-Example:
-
+IDOR is an API vulnerability that results from the end user being able access database objects using their own input. This stems from the lack of proper access rights in an applications. Using IDOR, an attacker can manipulate the direct object reference such as a URL query parameter, database key, session id etc and get access to data or information they shouldn't have acess to. For example, for a student to check their results, they login to their portal. If the URL to check their results is: `https://student-portal/{student-id}`, they can can change their student id to another students id and access their results if proper validation isn't put in place. Even worse is if they are able to use an automation tool to loop through all the student records in the application and access their data.
+![IDOR illustration](../IDOR.png)
+In this scenario, the student id is the direct object reference. Using IDOR an attacker can access data they aren't authorized to access. This is one case of excessive data exposure in applications.
 
 ### Cross-site scripting (XSS) attacks
 
+An XSS attack is one where the attacker injects malicious javascript scripts into a trusted website. An authenticated user to a system may receive a link to the website with some script embedded into it. If the app doesn't do proper data sanitization, the attackers script gets executed on the users browser. The attacker is then able to steal the data e.g cookie, PII etc they want to meet their objective.
