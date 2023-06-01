@@ -32,13 +32,16 @@ An SQL injection is atype of attack that is targeted towards applications that u
 
 CIA Triad affected: **Confidentiality**, **Integrity**
 
-## Insecure direct object refences (IDOR)
+## Insecure direct object reference (IDOR)
 
-IDOR is an API vulnerability that results from the end user being able access database objects using their own input. This stems from the lack of proper access rights in an applications. Using IDOR, an attacker can manipulate the direct object reference such as a URL query parameter, database key, session id etc and get access to data or information they shouldn't have acess to.
+IDOR is an API access control vulnerability. IDOR results from the end user being able access database objects using their own input to retrieve data, files or documents. This stems from the lack of proper access control rights in an applications. Using IDOR, an attacker can manipulate the direct object reference such as a URL query parameter, database key, session id etc and get access to data or information they shouldn't have acess to.
 
 For example, for a student to check their results, they login to their portal. If the URL to check their results is: `https://student-portal/{student-id}`, they can can change their student id to another students id and access their results if proper validation isn't put in place. Even worse is if they are able to use an automation tool to loop through all the student records in the application and access their data.
 ![IDOR illustration](../IDOR.png)
-In this scenario, the student id is the direct object reference. Using IDOR an attacker can access data they aren't authorized to access. This is one case of excessive data exposure in applications.
+In this scenario, the student id is the direct object reference. Using IDOR the student was able to access another student's portal becasue there wasn;t sufficient validation on the server side to ensiure the requested object belongs to the person requesting it.
+
+**IDOR detection:** Encoded object IDs which can be decoded and encoded again using https://crackstation.net/, hashed IDs which can be discovered using https://crackstation.net/, create two accounts and swap the user IDs between the two accounts to see if ytou can access the other users data logged in or not for unpredictable IDS.
+**IDOR location**: address bars, references in the javascript files, in AJAX requests, throught parameter mining
 
 CIA Triad affected: **Confidentiality**, **Integrity**
 

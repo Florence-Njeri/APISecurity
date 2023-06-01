@@ -1,0 +1,4 @@
+# Implement Role Based Access (RBA)
+
+Implementing RBA which restricts user access to only the data and functionality necessary for their job function. Additionally, APIs can regularly review and update user permissions to ensure that they align with business needs and do not create unnecessary risks. By prioritizing authorization security, organizations can minimize the risk of unauthorized access and protect sensitive data.
+RBA ensures people only get access to the data they are **authorized** to access by setting up proper access rules in your app. Don't overexpose your database data by returning data the user doesn't need.

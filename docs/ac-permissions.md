@@ -1,1 +1,0 @@
-# Implementing access controls and permissions to restrict access to sensitive API endpoints
